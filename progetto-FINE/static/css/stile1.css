@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(#FFFFFF, #000000);
+  background-repeat: repeat-y;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#text {
+  color: white;
+  width: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: blue;
+}
+
+.center{
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding-top: 1%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.center1{
+  margin: auto;
+  padding: 3px;
+  max-width: 695px;
+}
+
+.center2{
+  padding-top: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.searchbar{
+  padding:20px;
+  margin: auto;
+  width: 575px;
+  height: 48px;
+  border: 0px solid #0A10B8;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+}
+
+.searchbar:hover{
+  box-shadow: 1px 1px 8px 1px #0A10B8;
+}
+.searchbar:focus-within{
+  box-shadow: 1px 1px 8px 1px #0A10B8;
+  outline: none;
+}
+
+.button {
+  position: fixed;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  position: static;
+  background-color: white;
+  color: #0A10B8;
+  border: 1px solid #0A10B8;
+}
+
+.button1:hover {
+  background-color: #0A10B8;
+  color: white;
+}
+
+.transparent_btn {
+  border-radius: 30px;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: auto;
+  transition-duration: 0.4s;
+  background-color: rgba(255,255,255, 0);
+  cursor: pointer;
+}
+
+.button3 {
+  background-color: trasparent;
+  color: #ffffff;
+  border: 1px solid #0A10B8;
+}
+
+.button3:hover {
+  background-color: #0A10B8;
+  color: white;
+}
+
+@media screen and (max-width: 850px), screen and (max-height: 530px) {
+  .center{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding-top: 1%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button1 {
+    position: static;
+    background-color: white;
+    color: #0A10B8;
+    border: 1px solid #0A10B8;
+  }
+  
+  .button1:hover {
+    background-color: #0A10B8;
+    color: white;
+  }
+
+  .center2{
+    padding-top: 5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .center1{
+    margin: 1%;
+    width: 370px;
+    margin: auto;
+    padding: 3px;
+  }
+
+   .searchbar{
+    width: 250px;
+  }
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="/static/css/stile3.css" type="text/css">
+     <style>
+        body{background: Url("static/img/grigi.jpg") no-repeat fixed}
+     </style>
+     <style>
+        .myDiv {
+            float: down;
+            margin: auto;
+            border: 2px outset black;
+            text-align: left;
+            width: 66%;
+            border-radius: 5px;
+            padding: 3px;
+        }
+
+        .myDiv2 {
+            margin: 0 auto;
+            text-align: left;
+            width: 50%;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ </head>
+
+ <body>
+   <div class="center">
+        <form class="form-inline" action="results" method="get">
+            <input class="searchbar" id="searchbar" name="barra" type="text" title="Search" placeholder="Insert your query..."
+                   required="required" value="{{ request.args.get('barra') }}">
+            <span><a href="results"><button class="button button1" id="search">Search</button></a></span>
+        </form>
+   </div>
+   <div id="adv" class="center1">
+        <span><a href="advanced"><button class="transparent_btn button3">Advanced</button></a></span>
+   </div><br><br>
+   {% if lun < 10 %}
+       {% if syn_lun > 0 %}
+        <div class="myDiv2"><b>Did you mean:</b>
+            {% for syn in syns %}
+                <div style="display: inline-block; margin: 1%;"><button class="{{ syn }}" value="{{ syn }}" onclick="search2(this.value)";>{{ syn }}</button></div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endif %}
+
+    {% for d in data %}
+        <div class="myDiv">
+            <h2>{{ d['Atitle'] }} ~ <i>{{d['Cdirector']}}</i></h2><br>
+            <h4><a href="{{ d['Fpath'] }}"href="">{{ d['Fpath'] }}</a></h4><br>
+            {% if d['Contenthighlights'] == "" %}
+                <p style="font-size:120%;">{{ d['Bcontent'] }}</p>
+            {% else %}
+                <p style="font-size:120%;">{{ d['Contenthighlights'] | safe}}</p>
+            {% endif %}
+                <h5 align="right">{{ d['date'] }}</h5>
+            </div><br>
+    {% endfor %}
+
+ </body>
+
+</html>
+
+<script>
+	function search2(val){
+        document.getElementById("searchbar").value += " OR " + val ;
+	}
+</script>

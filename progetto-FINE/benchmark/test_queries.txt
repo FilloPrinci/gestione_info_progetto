@@ -1,0 +1,10 @@
+avengers film
+"Christopher Nolan"
+{heroes,RT} OR batman OR avengers OR superman OR flash
+lord of the ring AND Peter Jackson
+lion
+rally OR "formula one" OR {race,RT}
+"Stanley Kubrick" OR "Alfred Hitchcock"
+"New York"
+magician OR magical OR {magic,NT}
+"Harry potter" OR "David Yates"

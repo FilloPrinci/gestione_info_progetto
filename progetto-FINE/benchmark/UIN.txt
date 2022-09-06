@@ -1,0 +1,10 @@
+Film degli Avengers: avengers film
+Film di Christopher Nolan: "Christopher Nolan"
+Film sui supereroi: {heroes,RT} OR batman OR avengers OR superman OR flash
+Film sulla trilogia del signore degli anelli di Peter Jackson: lord of the ring AND Peter Jackson
+Film sui leoni: lion
+Film sulle corse automobilistiche: rally OR "formula one" OR {race,RT}
+Film diretti da Stanley Kubrick oppure Alfred Hitchcock: "Stanley Kubrick" OR "Alfred Hitchcock"
+Film a New york: "New York"
+Film che tratta di magia e simili: magician OR magical OR {magic,NT}
+Film di Harry potter o diretti da David Yates: "Harry potter" OR "David Yates"

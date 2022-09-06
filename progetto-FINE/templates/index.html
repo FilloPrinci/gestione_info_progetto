@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+ <head>
+  <link rel="stylesheet" href="/static/css/stile1.css" type="text/css">
+ </head>
+
+ <body scroll="no" style="overflow: hidden">
+  <canvas id="canvas1"></canvas>
+  <script type=text/javascript src="{{ url_for('static', filename='js/script.js')}}"></script>
+  <div class="center2">
+	<img src="{{ url_for('static', filename='img/Logofinale.png') }}">
+  </div>
+	<div class="center">
+		<form class="form-inline" action="results" method="get">
+			<input class="searchbar" name="barra" type="search" id="mysearch_index" title="Search"
+					placeholder="Insert your query..." required="required">
+		    <a href="results"><button class="button button1" id="src">Search</button></a>
+		</form>
+	</div>
+	<div id="adv" class="center1">
+		<a href="advanced"><button class="transparent_btn button3">Advanced</button></a>
+	</div>
+
+ </body>
+
+</html>

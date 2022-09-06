@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+	<link rel="stylesheet" href="/static/css/stile2.css" type="text/css">
+	<style>
+		body{background: Url("static/img/grigi.jpg") no-repeat fixed}
+    </style>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ </head>
+
+ <body>
+	<div class="pad_y" id = "pad_y">
+		<input class="searchbar" name = "term" type="search" id="mysearch" title="Search"
+			placeholder="Enter a search term">
+		<button class="button button1" id="add" onclick="rem();create_query();">ADD</button>
+	</div>
+	<form class="form-inline" action="results" method="get">
+		<div class="option-box">
+			<label for="Da">Da:&nbsp;</label>
+			<input type="date" id="Da" name="Da"><br>
+			&emsp;<label for="a">A:&nbsp;</label>
+			<input type="date" id="a" name="a"><br><br>
+			&emsp;<label for="director">Director&nbsp;</label>
+			<input list="director" name="director">
+			<datalist id="director">
+				{% for list in data %}
+					<option value ="{{ list }}">
+				{% endfor %}
+			</datalist><br><br>
+			&emsp;<label for="genres">Genres&nbsp;</label>
+			<input list="genres" name="genres">
+			<datalist id="genres">
+				{% for list in genres %}
+					<option value ="{{ list }}">
+				{% endfor %}
+			</datalist><br><br>
+			&emsp;<label for="n_res">N°:&nbsp;</label>
+			<input type="number" id="n_res" name="n_res" min="1" max="100" width="10" value="10">
+		</div>
+		<div class="check-box">
+			<input class="checkbox1" type="checkbox" id="IMDB" name="IMDB">
+			&emsp;<label for="IMDB">IMDB</label><br><br>
+		</div>
+		<div class="check-box-1">
+			<input class="checkbox1" type="checkbox" id="THEMOVIE" name="THEMOVIE">
+			&emsp;<label for="THEMOVIE">THE MOVIE</label><br><br>
+		</div>
+		<div class="check-box-1">
+			<input class="checkbox1" type="checkbox" id="FILMSOMNIAC" name="FILMSOMNIAC">
+			&emsp;<label for="FILMSOMNIAC">FILMSOMNIAC</label><br><br>
+		</div>
+		<div class="query-box" class="query-box-wrapper">
+			<textarea id="query-box-input" class="query-box-input" name="barra"
+				placeholder="Enter / edit your search query here"></textarea>
+			<a href="results"><button class="button button1" id="search">Search</button></a>
+		</div>
+	</form>
+ </body>
+
+</html>
+
+<script>
+	function create_query(){
+		var term = document.getElementById("mysearch");
+		document.getElementById("query-box-input").innerHTML = term.value;
+	}
+</script>
+
+<script>
+	function create_query_or(){
+		var term = document.getElementById("mysearch");
+		var query = document.getElementById("query-box-input");
+		query.value = "(" + query.value + ")" + " OR (" + term.value + ")";
+	}
+</script>
+
+<script>
+	function create_query_and(){
+		var term = document.getElementById("mysearch");
+		var query = document.getElementById("query-box-input");
+		query.value = "(" + query.value + ")" + " AND (" + term.value + ")";
+	}
+</script>
+
+<script>
+	function rem(){
+		if(document.getElementById("mysearch").value != ""){
+			var myrem = document.getElementById("add");
+			myrem.remove()
+			var btn = document.createElement("BUTTON1");
+			var btn2 = document.createElement("BUTTON2");
+	  		btn.innerHTML = "OR";
+			btn2.innerHTML = "AND";
+			btn.className = "button button1"
+			btn2.className = "button button1"
+			btn.setAttribute("ID","OR")
+			btn2.setAttribute("ID","AND")
+	  		document.getElementById("pad_y").appendChild(btn);
+			document.getElementById("pad_y").appendChild(btn2);
+			document.getElementById("OR").onclick = create_query_or;
+			document.getElementById("AND").onclick = create_query_and;
+		}
+	}
+
+	function rem2(){
+		var myrem = document.getElementById("add");
+		myrem.remove()
+		var btn = document.createElement("BUTTON1");
+		var btn2 = document.createElement("BUTTON2");
+		btn.innerHTML = "OR";
+		btn2.innerHTML = "AND";
+		btn.className = "button button1"
+		btn2.className = "button button1"
+		btn.setAttribute("ID","OR")
+		btn2.setAttribute("ID","AND")
+		document.getElementById("pad_y").appendChild(btn);
+		document.getElementById("pad_y").appendChild(btn2);
+		document.getElementById("OR").onclick = create_query_or;
+		document.getElementById("AND").onclick = create_query_and;
+	}
+
+	function add(){
+			var myrem = document.getElementById("OR");
+			var myrem2 = document.getElementById("AND");
+			myrem.remove()
+			myrem2.remove()
+			var btn = document.createElement("BUTTON1");
+			btn.innerHTML = "ADD";
+			btn.className = "button button1"
+			btn.setAttribute("ID","add")
+			document.getElementById("pad_y").appendChild(btn);
+			document.getElementById("OR").onclick = create_query;
+	}
+</script>
+
+<script>
+	$("#query-box-input").keyup(function() {
+		if($.trim($("#query-box-input").val())){
+		rem2();}
+	});
+</script>
+
+<script>
+	$("#query-box-input").keyup(function () {
+		if(!$("#query-box-input").val()){
+			add();}
+	})
+</script>

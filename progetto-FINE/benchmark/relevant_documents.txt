@@ -1,0 +1,117 @@
+root: 
+	site:imdb.com OR 
+	site:www.themoviedb.org/movie
+	
+Avengers film:['https://www.imdb.com/title/tt0848228/',
+               'https://www.imdb.com/title/tt4154796/',
+			   'https://www.imdb.com/title/tt4154756/',
+			   'https://www.imdb.com/title/tt2395427/',
+			   'https://www.imdb.com/title/tt0118661/',
+			   'https://www.imdb.com/title/tt3498820/',
+			   'https://www.themoviedb.org/movie/24428',
+               'https://www.themoviedb.org/movie/299534',
+               'https://www.themoviedb.org/movie/299536',
+               'https://www.themoviedb.org/movie/14609']
+
+"Christopher Nolan":['https://www.imdb.com/title/tt6723592/',
+                     'https://www.imdb.com/title/tt1375666/',
+					 'https://www.imdb.com/title/tt0154506/',
+					 'https://www.imdb.com/title/tt0816692/',
+					 'https://www.imdb.com/title/tt0468569/',
+					 'https://www.imdb.com/title/tt5013056/',
+					 'https://www.imdb.com/title/tt0209144/',
+					 'https://www.themoviedb.org/movie/577922',
+					 'https://www.themoviedb.org/movie/272',
+					 'https://www.themoviedb.org/movie/49026']
+
+{heroes,RT} OR batman 
+ OR avengers OR 
+ superman OR flash:['https://www.imdb.com/title/tt1877830/',
+                     'https://www.imdb.com/title/tt0078346/',
+					 'https://www.imdb.com/title/tt0096895/',
+					 'https://www.imdb.com/title/tt0468569/',
+					 'https://www.imdb.com/title/tt0372784/',
+					 'https://www.themoviedb.org/movie/1924',
+					 'https://www.themoviedb.org/movie/268',
+					 'https://www.themoviedb.org/movie/24428',
+					 'https://www.themoviedb.org/movie/736074',
+					 'https://www.themoviedb.org/movie/414906']
+					 
+lord of the ring 
+ AND Peter Jackson:['https://www.imdb.com/title/tt0120737/',
+					'https://www.imdb.com/title/tt0167260/',
+					'https://www.imdb.com/title/tt0167261/',
+					'https://www.imdb.com/title/tt0903624/',
+					'https://www.imdb.com/title/tt2310332/',
+					'https://www.imdb.com/title/tt1170358/',
+					'https://www.themoviedb.org/movie/120-the-lord-of-the-rings-the-fellowship-of-the-ring',
+					'https://www.themoviedb.org/movie/121-the-lord-of-the-rings-the-two-towers',
+					'https://www.themoviedb.org/movie/122-the-lord-of-the-rings-the-return-of-the-king',
+					'https://www.themoviedb.org/movie/49051-the-hobbit-an-unexpected-journey']
+						
+Lion:['https://www.imdb.com/title/tt3741834/',
+                     'https://www.imdb.com/title/tt6105098/',
+					 'https://www.imdb.com/title/tt0110357/',
+					 'https://www.imdb.com/title/tt0063227/',
+					 'https://www.imdb.com/title/tt9908390/',
+					 'https://www.themoviedb.org/movie/589970-le-lion',
+					 'https://www.themoviedb.org/movie/498248-mia-et-le-lion-blanc',
+					 'https://www.themoviedb.org/movie/85615-the-lion',
+					 'https://www.themoviedb.org/movie/64414-le-signe-du-lion',
+					 'https://www.themoviedb.org/movie/64414-le-signe-du-lion']
+
+rally OR "formula one" OR {race,RT}: ['https://www.themoviedb.org/movie/1637',
+										'https://www.themoviedb.org/movie/10483,
+										'https://www.themoviedb.org/movie/136797',
+										'https://www.themoviedb.org/movie/7459',
+										'https://www.themoviedb.org/movie/401478',
+										'https://www.imdb.com/title/tt3499096/',
+										'https://www.imdb.com/title/tt0111257/',
+										'https://www.imdb.com/title/tt1017456/',
+										'https://www.imdb.com/title/tt0811080/',
+										'https://www.imdb.com/title/tt4300480/']
+					 
+"Stanley Kubrick" OR 
+	"Alfred Hitchcock": ['https://www.imdb.com/title/tt0054215/',
+                     'https://www.imdb.com/title/tt0062622/',
+					 'https://www.imdb.com/title/tt0047396/',
+					 'https://www.imdb.com/title/tt0066921/',
+					 'https://www.imdb.com/title/tt0975645/',
+					 'https://www.imdb.com/title/tt0053125/',
+					 'https://www.imdb.com/title/tt13943780/',
+					 'https://www.themoviedb.org/movie/826263-i-am-alfred-hitchcock',
+					 'https://www.themoviedb.org/movie/516247-stanley-kubrick-the-invisible-man',
+					 'https://www.themoviedb.org/movie/315470-stanley-kubrick-in-focus']
+					 
+New York: 			['https://www.themoviedb.org/movie/772-home-alone-2-lost-in-new-york',
+						'https://www.themoviedb.org/movie/3131-gangs-of-new-york',
+						'https://www.themoviedb.org/tv/14808-the-real-housewives-of-new-york-city',
+						'https://www.themoviedb.org/movie/25887-gangs-of-new-york',
+						'https://www.themoviedb.org/movie/885-the-docks-of-new-york',
+						'https://www.imdb.com/title/tt0076451/',
+						'https://www.imdb.com/title/tt1328634/',
+						'https://www.imdb.com/title/tt0082340/',
+						'https://www.imdb.com/title/tt0217505/',
+						'https://www.imdb.com/title/tt0808399/',]
+
+magician OR magical OR {magic,NT}: ['https://www.imdb.com/title/tt1457767/',
+									'https://www.imdb.com/title/tt7069210/',
+									'https://www.imdb.com/title/tt3065204/'
+									'https://www.imdb.com/title/tt0068994/',
+									'https://www.imdb.com/title/tt0051365/',
+									'https://www.themoviedb.org/movie/423108',
+									'https://www.themoviedb.org/movie/138843',
+									'https://www.themoviedb.org/movie/726164',
+									'https://www.themoviedb.org/movie/108273',
+									'https://www.themoviedb.org/movie/404938']
+
+"Harry potter" OR "David Yates": ['https://www.imdb.com/title/tt0241527/',
+									'https://www.imdb.com/title/tt0417741/',
+									'https://www.imdb.com/title/tt0926084/',
+									'https://www.imdb.com/title/tt0373889/',
+									'https://www.imdb.com/title/tt0304141/',
+									'https://www.themoviedb.org/movie/12445',
+									'https://www.themoviedb.org/movie/12444',
+									'https://www.themoviedb.org/movie/675',
+									'https://www.themoviedb.org/movie/673',
+									'https://www.themoviedb.org/movie/671']
