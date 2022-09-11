@@ -1,6 +1,3 @@
-![Movienet Logo](/static/img/Logofinale.png)
-
-[LINK TO ENGLISH VERSION](README_ENGLISH.md)
 
 ## **RACCOMANDAZIONI**
 
@@ -8,7 +5,7 @@ Per il corretto funzionamento del programma bisogna aver installato sul proprio 
 
 ## **REQUISITI**
 
-Per poter utilizzare **MOVIENET** è necessario installare i moduli Python necessari
+Per poter utilizzare **WIKIFILM** è necessario installare i moduli Python necessari
 
 1. Aprire una nuova finestra terminale
 2. Entrare nella cartella del progetto
@@ -20,23 +17,6 @@ Lanciare il seguente comando:
 
 ```bash
 python -m pip install -r requirements.txt
-```
-
-## *Linux* :
-
-Lanciare i seguenti comandi:
-
-```bash
-python3 -m pip install -r requirements.txt
-sudo apt install python3-flask
-```
-
-## *macOS* :
-
-Lanciare il seguente comando:
-
-```bash
-python3 -m pip install -r requirements.txt
 ```
 
 ## **ESECUZIONE**
@@ -51,22 +31,6 @@ Il seguente comando:
 
 ```bash
 .\start.bat
-```
-
-## *Linux*:
-
-Il seguente comando:
-
-```bash
-bash start.sh
-```
-
-## *macOS*:
-
-Il seguente comando:
-
-```bash
-bash start_mac.sh
 ```
 ### *`TIP OF`* :
 In caso di mal funzionamento del processo di automazione lanciare il comando riportato di seguito:
@@ -83,7 +47,7 @@ python app.py
 python3 app.py
 ```
 
-Successivamente copiare ed incollare il seguente URL `https://127.0.0.1:5000/` su Google Chrome ed il gioco è fatto!
+Successivamente copiare ed incollare il seguente URL `https://127.0.0.1:5000/` su Google Chrome.
 
 ## **SCRAPING**
 
@@ -100,8 +64,6 @@ python3 estrazione_link.py
 ```
 ed attendere il completamento che richiede all'incirca dalle 4 alle 6 ore
 
-`ATTENZIONE: al momento causa down del sito filmsomniac.com non è possibile effettuare la fase di scraping di quest'ultimo`
-
 ## **INDEXING**
 
 Se si vuole re-indicizzare i documenti 
@@ -114,7 +76,7 @@ python3 indexing.py
 
 # **INTRODUZIONE E COME UTILIZZARE**
 
-**MOVIENET** è un motore di ricerca basato sui film, esso raggruppa all'incirca 10.000 documenti contenenti titolo, data di uscita, riassunto della trama, il/i genere/i, il direttore ed il link per raggiungere la pagina di riferimento 
+**WIKIFILM** è un motore di ricerca basato sui film, esso raggruppa all'incirca 10.000 documenti contenenti titolo, data di uscita, riassunto della trama, il/i genere/i, il direttore ed il link per raggiungere la pagina di riferimento 
 
 Una volta lanciata l'applicazione, nella home page si trova in primo piano la barra di ricerca con al di sotto un tasto advanced con cui accedere alla ricerca avanzata dove è possibile impostare dei filtri alle queries
 

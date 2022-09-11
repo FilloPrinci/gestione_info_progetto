@@ -18,7 +18,7 @@
 .pad_y{
   margin: auto;
   margin-top: 3%;
-  max-width: 100%;
+  max-width: 50%;
   padding: 3px;
   text-align: center;
   justify-content: center;
@@ -106,7 +106,15 @@
   align-items: center;
 }
 
+.center{
 
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 .query-box{
   margin: auto;
   margin-top: 7%;
@@ -148,21 +156,23 @@
 }
 
 
-@media screen and (max-width: 800px) {
-
-  .pad_y{
-	margin: auto;
-	margin-top: 3%;
-	max-width: 100%;
-	padding: 3px;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-  }
-
-  .searchbar{
-    width: 300px;
-  }
+.form-check-input{
+  width: 2.0rem !important;
+  height: 2.0rem !important;
 }
+.s004 {
 
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: lightseagreen;
+  background-size: cover;
+  background-position: center center;
+  padding: 15px;
+}
 
