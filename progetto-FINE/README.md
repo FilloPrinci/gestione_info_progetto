@@ -1,8 +1,4 @@
 
-## **RACCOMANDAZIONI**
-
-Per il corretto funzionamento del programma bisogna aver installato sul proprio pc [**python3**](https://www.python.org/downloads/) e [**Google Chrome**](https://www.google.it/intl/it/chrome/)
-
 ## **REQUISITI**
 
 Per poter utilizzare **WIKIFILM** è necessario installare i moduli Python necessari
@@ -24,16 +20,6 @@ python -m pip install -r requirements.txt
 Dopo aver installato i requisiti per avviare **MOVIENET**, rimanendo all'interno della cartella del progetto
 
 Per lanciare l'applicazione basta semplicemente inserire
-
-## *Windows*:
-
-Il seguente comando:
-
-```bash
-.\start.bat
-```
-### *`TIP OF`* :
-In caso di mal funzionamento del processo di automazione lanciare il comando riportato di seguito:
 
 ## *Windows*:
 
@@ -76,7 +62,7 @@ python3 indexing.py
 
 # **INTRODUZIONE E COME UTILIZZARE**
 
-**WIKIFILM** è un motore di ricerca basato sui film, esso raggruppa all'incirca 10.000 documenti contenenti titolo, data di uscita, riassunto della trama, il/i genere/i, il direttore ed il link per raggiungere la pagina di riferimento 
+**WIKIFILM** è un motore di ricerca basato sui film, esso raggruppa all'incirca 15.000 documenti contenenti titolo, data di uscita, riassunto della trama, il/i genere/i, il direttore ed il link per raggiungere la pagina di riferimento 
 
 Una volta lanciata l'applicazione, nella home page si trova in primo piano la barra di ricerca con al di sotto un tasto advanced con cui accedere alla ricerca avanzata dove è possibile impostare dei filtri alle queries
 
@@ -89,9 +75,9 @@ Nella barra di ricerca è possibile specificare queries in lingua inglese usando
 
 >ESEMPI 
 >
->query testo libero: avenger
+>query testo libero: Spider-Man
 >
->query per cercare una frase: "Harry Potter"
+>query per cercare una frase: "Hulk"
 >
 >query che utilizza i booleani: "The lord of the ring" AND "Peter Jackson"
 >
@@ -120,8 +106,8 @@ Nella ricerca avanzata come accennato precedentemente è possibile impostare fil
     * È possibile selezionare più di una sorgente contemporaneamente
 * Utilizzare la barra superiore per formulare automaticamente query in AND e OR
 
-## **SUPPORTO**
+## **Contatti**
 
-Per ogni problema utilizzare i seguenti contatti:
-* 243470@studenti.unimore.it - Davis Innangi
-* 243895@studenti.unimore.it - Enzo Rotonda
+contatti:
+* 242802@studenti.unimore.it - Filippo Principato
+* 246016@studenti.unimore.it - Jihed Fatnassi
