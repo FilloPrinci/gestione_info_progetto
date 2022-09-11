@@ -7,10 +7,10 @@ from string import punctuation
 from dateutil.parser import parse
 from timeit import default_timer as timer
 
-# Creo la directory json_file nella directory progetto
+# Creo la directory FilesJson nella directory progetto
 root = os.path.abspath(os.curdir)
-if not os.path.exists(root + r"/json_file"):
-    os.mkdir(root + r"/json_file")
+if not os.path.exists(root + r"/FilesJson"):
+    os.mkdir(root + r"/FilesJson")
 
 # Liste in cui inserirò i dati
 title = []
@@ -187,7 +187,7 @@ def retrive_link_imdb():
     dictionary = create_dictionary(title,year,storyline,genre,director,link_list)
 
     # Creo un file json contente i film
-    with open(root + r"/json_file/imdb.json", "w", encoding="utf8") as f:
+    with open(root + r"/FilesJson/imdb.json", "w", encoding="utf8") as f:
         json.dump(dictionary,f,indent=4,ensure_ascii=False)
 
 # Funzione che recupera le informazioni dal sito themovie
@@ -266,123 +266,13 @@ def retrive_link_themovie():
 
     dictionary = create_dictionary(title,year,storyline,genre,director,link_list)
 
-    with open(root + r"/json_file/themovie.json", "w", encoding="utf8") as f:
-        json.dump(dictionary,f,indent=4,ensure_ascii=False)
-
-# Funzione che recupera le informazioni dal sito filmsomniac
-def retrive_link_filmsomniac():
-
-    # Richiede la pagina Web
-    r = requests.get('https://www.filmsomniac.com/browse/genres')
-    # Parser della pagina
-    soup = BeautifulSoup(r.content, 'html.parser')
-
-    inizialize_list()
-    
-    # Recupera tutti i link delle categorie
-    i = soup.find_all('div', {'class':'event-list'})
-    for page_genre in i[3].find_all('a'):
-        page_genre = page_genre.get('href')
-        page_genre = 'https://www.filmsomniac.com' + page_genre
-
-        soup2 = requests.get(page_genre)
-        soup2 = BeautifulSoup(soup2.content, 'html.parser')
-
-        # Per ogni categoria navigo per 10 pagine, il range parte da 2 perchè la prima pagina
-        # viene passata automaticamente (Ogni pagina ha 25 film e le categorie sono 22)
-        for id in range(2,12):
-            # Recupero tutti i film per categoria se esiste la pagina
-            if soup2 is not None:
-                i = soup2.find('div', {'class':'flex-wrap-movielist'})
-                if i is not None:
-                    # Per ogni film nella categoria
-                    for film in i.find_all('div', {'class':'movie-item-style-2 item-row hide-for-small'}):
-                        film = film.find('a').get('href')
-                        link = 'https://www.filmsomniac.com' + film
-
-                        film = requests.get(link)
-                        soup3 = BeautifulSoup(film.content, 'html.parser')
-
-                        # Recupero il titolo
-                        tit = soup3.find('h1', {'id':'film-title'}).text
-                        tit = re.sub(r"\b\d{4}\b$", "", tit)
-                        tit = tit.strip()
-
-                        # Recupero la trama
-                        summary = soup3.find('p', {'class':'film-summary'})
-                        if summary is not None:
-                            matched = re.match(r".*plot\s(.{3}|.{8})?unknown.*",summary.text.lower())
-                            is_match = bool(matched)
-                            if is_match:
-                                summary = None
-                            else:
-                                summary = summary.text.strip()
-
-                        # Recupero il contenitore con le info (genere, direttore, anno)
-                        i = soup3.find('div', {'class':'col-md-3 col-xs-12 col-sm-12 hide-for-small'})
-                        ge = []
-                        directed = None
-                        release = None
-
-                        # Raccolgo il regista
-                        for info in i.find_all('div', {'class':'sb-it'}):
-                            tipo = info.find('h6').text
-                            if tipo == "Directed by: ":
-                                if info.find('p').text.strip() != "":
-                                    directed = info.find('p').text
-                                    directed = re.sub(r"\s+"," ",directed).strip()
-
-                            # Raccolgo i generi
-                            if tipo == "Genres:":
-                                ge = []
-                                for all_gen in info.find_all('span'):
-                                    if all_gen is not None:
-                                        ge.append(all_gen.text.strip())
-
-                            # Raccolgo l'anno
-                            if tipo == "Released:":
-                                release = info.find('p').text.strip()
-                                if release != "No release date available.":
-                                    release = parse(release)
-                                    release = release.strftime('%d/%m/%Y')
-
-                        check_duplicate(tit,release,summary,ge,directed,link)
-
-                # Recupero la pagina successiva se esiste
-                next_page = soup2.find('ul', {'class':'pagination'})
-                if next_page is not None:
-                    soup3 = None
-                    next_page = next_page.find_all('li')
-                    for all_link in next_page:
-                        all_link = all_link.find('a')
-                        if all_link is not None:
-                            if all_link.text == str(id):
-                                next_page = page_genre + f"?page={id}"
-                                next_page = requests.get(next_page)
-                                soup3 = BeautifulSoup(next_page.content, 'html.parser')
-                    if soup3 is not None:
-                        soup2 = soup3
-                    else:
-                        soup2 = None
-                # Fermo il ciclo sulle pagine se non sono presenti pagine successive (continuo sui generi)
-                else:
-                    break
-            # Fermo il ciclo sulle pagine se sono presenti link ma fanno riferimento a pagine precedenti (continuo sui generi)
-            else:
-                break
-        
-    # Creo un dizionario
-    dictionary = create_dictionary(title,year,storyline,genre,director,link_list)
-
-    # Creo un file json contente i film
-    with open(root + r"/json_file/filmsomniac.json", "w", encoding="utf8") as f:
+    with open(root + r"/FilesJson/themovie.json", "w", encoding="utf8") as f:
         json.dump(dictionary,f,indent=4,ensure_ascii=False)
 
 start = 0.0
 print('inizio    : ' + str(start))
 retrive_link_imdb()
 retrive_link_themovie()
-# retrive_link_filmsomniac()
 end = timer()
 print('fine      : ' + str(end))
 print('intervallo: ' + str((int(end - start) / 60)) + " minuti")

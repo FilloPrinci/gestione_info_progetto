@@ -21,7 +21,7 @@ def source_filter(query, ix):
 
     imdb = ""
     themovie = ""
-    filmsomniac = ""
+
 
     # Se l'utente seleziona IMDB imposto la variabile imdb a contenere tutti i link che contengono www.imdb.com
     if query['imdb']:  # if the user wants articles from ESA
@@ -31,16 +31,14 @@ def source_filter(query, ix):
     if query['themovie']:
         themovie = "*www.themoviedb.org*"
 
-    # Se l'utente seleziona FILMSOMNIAC imposto la variabile filmsomniac a contenere tutti i link che contengono www.filmsomniac.com
-    if query['filmsomniac']:
-        filmsomniac = "*www.filmsomniac.com*"
+   
 
     # Se non viene fatta alcuna scelta imposto tutte e tre le sorgenti di default 
-    if (not query['imdb']) and (not query['themovie']) and (not query['filmsomniac']):
-        return qparser.parse("*www.imdb.com* OR *www.themoviedb.org* OR *www.filmsomniac.com*")    
+    if (not query['imdb']) and (not query['themovie']):
+        return qparser.parse("*www.imdb.com* OR *www.themoviedb.org* ")    
     # Altrimenti parserizzo in OR le sorgenti scelte
     else:
-        return qparser.parse(f"({imdb} OR {themovie}) OR {filmsomniac}")
+        return qparser.parse(f"({imdb} OR {themovie}) ")
 
 # Funzione filtro che seleziona il regista
 def director_filter(query, ix):
@@ -130,7 +128,7 @@ def my_query(query, count):
         query_text += " AND " + date_range
     
     # Se non imposto nessun parametro mi ritorna una lista di dizionari vuota (Controllo utile per advanced)
-    if query_text == "" and director is None and query['imdb'] is None and query['themovie'] is None and query['filmsomniac'] is None and date_range is None and genre is None:
+    if query_text == "" and director is None and query['imdb'] is None and query['themovie'] is None and date_range is None and genre is None:
         return [{}],0 
 
     # Se abbiamo settato un regista aggiungo la ricerca per regista (in AND)   

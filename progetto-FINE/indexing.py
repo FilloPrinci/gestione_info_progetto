@@ -24,13 +24,13 @@ def main(root):
     ix = create_in(r"./indexdir", schema)
     writer = ix.writer()
       
-    filepaths = [os.path.join(root + r'/json_file',i) for i in os.listdir(root + r'/json_file')]
+    filepaths = [os.path.join(root + r'/FilesJson',i) for i in os.listdir(root + r'/FilesJson')]
     
     # Creo un file.txt contenente tutti i direttori (utile nella gui)
     with open("director.txt", "w", encoding='utf-8') as f: 
         with open("genres.txt","w",encoding='utf-8') as g:
         
-            # Per ogni file nella directory json_file -->
+            # Per ogni file nella directory FilesJson -->
             for filename in filepaths:
                 with open(filename, encoding='utf-8') as file:
                     data = json.loads(file.read())

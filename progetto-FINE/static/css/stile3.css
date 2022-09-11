@@ -2,7 +2,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
+.bodyCustom{
+  background: lightseagreen
+}
 #text {
   color: white;
   width: 50%;
@@ -14,7 +16,21 @@
   z-index: 10;
   background: blue;
 }
+.myDiv {
+  float: down;
+  margin: auto;
+  border: 2px outset black;
+  text-align: left;
+  width: 66%;
+  border-radius: 5px;
+  padding: 3px;
+}
 
+.myDiv2 {
+  margin: 0 auto;
+  text-align: left;
+  width: 50%;
+}
 .center{
   margin: auto;
   margin-top: 1%;
