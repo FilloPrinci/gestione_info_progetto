@@ -27,11 +27,6 @@ Per lanciare l'applicazione basta semplicemente inserire
 python app.py
 ```
 
-## *Linux*/macOS: 
-
-```bash
-python3 app.py
-```
 
 Successivamente copiare ed incollare il seguente URL `https://127.0.0.1:5000/` su Google Chrome.
 
