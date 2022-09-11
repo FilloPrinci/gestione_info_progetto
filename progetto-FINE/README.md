@@ -97,6 +97,5 @@ Nella ricerca avanzata come accennato precedentemente è possibile impostare fil
 
 ## **Contatti**
 
-contatti:
 * 242802@studenti.unimore.it - Filippo Principato
 * 246016@studenti.unimore.it - Jihed Fatnassi
