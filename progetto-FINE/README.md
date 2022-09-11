@@ -37,13 +37,7 @@ Successivamente copiare ed incollare il seguente URL `https://127.0.0.1:5000/` s
 
 ## **SCRAPING**
 
-Se si vuole eseguire lo scraping bisogna identificare lo user agent adatto al proprio sistema operativo e alla versione del proprio Google Chrome ed inserirlo nel file `estrazione_link.py` alla riga 25
-
-![GitHub Logo](/HDR.png)
-
->[**Clicca qui per identificare lo user agent adatto**](https://developers.whatismybrowser.com/useragents/explore/)
-
-Successivamente lanciare il comando:
+lanciare il comando:
 
 ```bash
 python3 estrazione_link.py
