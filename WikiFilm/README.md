@@ -59,14 +59,6 @@ Nella barra di ricerca è possibile specificare:
     * Per cercare una frase ed evitare che le parole vengano messe in OR bisogna specificare la frase tra virgolette
 * In caso di meno di 10 risultati verranno proposte delle parole simili a quella/e digitate per aiutare nella ricerca
 
->ESEMPI 
->
->query testo libero: Spider-Man
->
->query per cercare una frase: "Hulk"
->
->
->query per concetti: {heroes,RT}
 
 Il thesaurus adottato è wordnet
 * La sintassi per una query è **{term, relationship-type}**
